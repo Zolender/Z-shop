@@ -1,6 +1,13 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+
 const App = () => {
   return (
-    <div className="bg-amber-100 text-blue-200">hey there</div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element = {<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
