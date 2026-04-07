@@ -3,7 +3,7 @@ import PageNotFound from "./components/PageNotFound";
 import Login from "./pages/Login";
 import Categories from "./pages/Categories";
 import Products from "./pages/Products";
-import CategoryDetails from "./pages/CategoryDetails";
+import CategoryProducts from "./pages/CategoryProducts";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
         <Route element={<ProtectedRoute/>}>
           <Route path="/" element={<Navigate to="/categories" replace/>}/>
           <Route path="/categories" element={< Categories/>}/>
-          <Route path="/categories/:id" element={<CategoryDetails/>}/>
+          <Route path="/categories/:id" element={<CategoryProducts/>}/>
           <Route path="/Products/:id" element={<Products/>}/>
         </Route>
 

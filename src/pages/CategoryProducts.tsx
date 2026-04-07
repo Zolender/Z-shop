@@ -20,7 +20,7 @@ type Product = {
     updated: string
 }
 
-const CategoryDetails = () => {
+const CategoryProducts = () => {
     const {id} = useParams()
     const navigate = useNavigate();
 
@@ -47,4 +47,4 @@ const CategoryDetails = () => {
     );
 }
  
-export default CategoryDetails;
+export default CategoryProducts;
