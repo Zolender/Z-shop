@@ -6,8 +6,7 @@ const Login = () => {
     const [email, setEmail] = useState<string>("")
     const [password, setPassword] = useState<string>("")
 
-    const handleSubmit = (e)=>{
-        e.preventDefault()
+    const handleSubmit = ()=>{
     }
 
 
@@ -15,7 +14,7 @@ const Login = () => {
     return (
         <div className="">
 
-            <form onSubmit={e=>handleSubmit(e)}>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="email">Email: </label>
                 <input type="email" required value={email} onChange={(e)=>setEmail(e.target.value)} /> <br />
                 <label htmlFor="paswword">Password:</label>
