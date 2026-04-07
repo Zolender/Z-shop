@@ -1,5 +1,6 @@
 import { useAuth } from "../context/AuthContext";
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import Layout from "./Layout";
 
 
 export default function ProtectedRoute(){
@@ -7,5 +8,5 @@ export default function ProtectedRoute(){
     if(!currentUser){
         return <Navigate to="/login" replace/>
     }
-    return <Outlet/>
+    return <Layout/>
 }
