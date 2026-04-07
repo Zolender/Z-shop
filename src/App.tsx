@@ -4,7 +4,7 @@ import Login from "./pages/Login";
 import Categories from "./pages/Categories";
 import Products from "./pages/Products";
 import CategoryDetails from "./pages/CategoryDetails";
-import ProtectedRoute from "./pages/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
   return (
