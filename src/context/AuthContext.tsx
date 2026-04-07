@@ -18,7 +18,7 @@ type AuthContextType = {
 }
 
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined)
+export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export function AuthProvider({children}: {children: React.ReactNode}){
     const [currentUser, setCurrentUser]= useState(()=>{
@@ -45,5 +45,6 @@ export function AuthProvider({children}: {children: React.ReactNode}){
 
 export function useAuth(){
     const context =  useContext(AuthContext)
+    if(!context)throw new Error("This function is to be called within the AuthProvider")
     return context
 }
