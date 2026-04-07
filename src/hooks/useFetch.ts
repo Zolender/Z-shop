@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const useFetch = <T>(url: string, options?: RequestInit) => {
     const [data, setData] = useState<T| null>(null)
-    const [isLoading, setIsLoading] = useState<Boolean>(true)
+    const [isLoading, setIsLoading] = useState<boolean>(true)
     const [error, setError] = useState<Error | null>(null)
 
     useEffect(()=>{
@@ -22,10 +22,10 @@ const useFetch = <T>(url: string, options?: RequestInit) => {
             }finally{
                 setIsLoading(false)
             }
-
+        }
             fetchData()
             return ()=>controller.abort()
-        }
+        
 
     }, [url])
 

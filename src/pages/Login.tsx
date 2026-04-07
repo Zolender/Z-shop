@@ -1,31 +1,15 @@
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
-import useFetch from "../hooks/useFetch";
-
-const Login = () => {
-
-    const [email, setEmail] = useState<string>("")
-    const [password, setPassword] = useState<string>("")
-
-    const handleSubmit = ()=>{
-    }
 
 
+export default function Login(){
+    const navigate = useNavigate()
+    const {login} = useAuth()
 
-    return (
-        <div className="">
+    const [formData, setFormData] = useState({email: "", password: ""})
+    const [error, setError] = useState<string>("")
+    const [isLoading, setIsloading] = useState<boolean>(false)
 
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email: </label>
-                <input type="email" required value={email} onChange={(e)=>setEmail(e.target.value)} /> <br />
-                <label htmlFor="paswword">Password:</label>
-                <input type="password" required value={password} onChange={(e)=>setPassword(e.target.value)} /> <br />
-                <input type="submit" value="Login" />
-            </form>
-        
-        </div>
-    );
+    
 }
-
-export default Login;
-
-
