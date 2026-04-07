@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PageNotFound from "./components/PageNotFound";
 import Login from "./pages/Login";
 import Categories from "./pages/Categories";
@@ -12,6 +12,7 @@ const App = () => {
       <Routes>
         <Route path="/login" element = {<Login />} />
         <Route element={<ProtectedRoute/>}>
+          <Route path="/" element={<Navigate to="/categories" replace/>}/>
           <Route path="/categories" element={< Categories/>}/>
           <Route path="/categories/:id" element={<CategoryDetails/>}/>
           <Route path="/Products/:id" element={<Products/>}/>
