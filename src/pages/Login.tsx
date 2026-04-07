@@ -16,6 +16,10 @@ export default function Login(){
     }
 
     function validate(): boolean{
+        if(!formData.email || !formData.password){
+            setError("All fields are required.")
+            return false
+        }
         return true
     }
 
