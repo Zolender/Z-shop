@@ -53,22 +53,22 @@ export default function Login(){
     }
 
     return (
-        <div className="">
-            <h1 className="">Login</h1>
-            <form onSubmit={handleSubmit} className="">
+        <div className="flex flex-col w-full min-h-screen bg-[#17cded86] py-20 items-center ">
+            <h1 className="text-3xl font-bold font-mono text-gray-700 mb-10">Login</h1>
+            <form onSubmit={handleSubmit} className="flex flex-col justify-between border-blue-300-2 w-90 h-90 rounded-md px-5 py-10 shadow-cyan-700 shadow-lg">
                 <div>
-                    <label htmlFor="email">Email</label>
-                    <input className="" type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="eben@gmail.com" />
+                    <label className="text-2xl font-mono block" htmlFor="email">Email</label>
+                    <input className="border-gray-500 border-2 w-full rounded-md px-5 text-slate-900 font-mono focus:outline-0 hover:shadow-blue-300 h-10 transition-all ease-in hover:shadow-md" type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="eben@gmail.com" />
                 </div>
                 <div>
-                    <label htmlFor="password">Password</label>
-                    <input className="" type="password" id="password" name="password" value={formData.password} onChange={handleChange} placeholder="Enter your password" />
+                    <label className="text-2xl font-mono block " htmlFor="password">Password</label>
+                    <input className="border-gray-500 border-2 w-full rounded-md px-5 text-slate-900 font-mono focus:outline-0 hover:shadow-blue-300 h-10 transition-all ease-in hover:shadow-md" type="password" id="password" name="password" value={formData.password} onChange={handleChange} placeholder="Enter your password" />
                 </div>
 
-                {error && <p className="text-red-400">{error}</p>}
+                {error && <p className="text-red-400 font-mono">{error}</p>}
 
 
-                <button type="submit" disabled={isLoading}>{isLoading? "Logging in..." : "Login"}</button>
+                <button className="border-0 bg-cyan-500 rounded-md h-10 hover:cursor-pointer hover:bg-cyan-600 transition-all ease-in duration-300 text-slate-100 hover:scale-105 active:scale-90 active:bg-cyan-900" type="submit" disabled={isLoading}>{isLoading? "Logging in..." : "Login"}</button>
 
             </form>
         </div>
