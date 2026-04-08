@@ -30,13 +30,13 @@ const CategoryProducts = () => {
     if (error)return <p className="">Error: {error.message}</p>
 
     return (
-        <div className="">
-            <h1 className="">{products?.[0]?.category.name?? "Category"}</h1>
-            <div className="">
-                {products?.length === 0 && (<p className="">No products found in this category.</p>)}
+        <div className="px-5">
+            <h1 className="text-center text-4xl font-mono font-bold text-cyan-800 mb-10">{products?.[0]?.category.name?? "Category"}</h1>
+            <div className="grid grid-cols-4 gap-5">
+                {products?.length === 0 && (<p className="text-center text-6xl font-mono font-bold text-red-800">No products found in this category.</p>)}
 
                 {products?.map(product=>(
-                    <div className="hover:cursor-pointer" key={product.id} onClick={()=> navigate(`/products/${product.id}`)}>
+                    <div className="p-2 rounded-md hover:shadow-md hover:shadow-black flex flex-col items-center border transition-all duration-300 ease-in-out hover:-translate-y-1 hover:cursor-pointer justify-between" key={product.id} onClick={()=> navigate(`/products/${product.id}`)}>
                         <img src={product.images[0]} alt={product.title} />
                         <h3 className="">{product.title}</h3>
                         <p className="">{product.price}</p>
@@ -46,5 +46,5 @@ const CategoryProducts = () => {
         </div>
     );
 }
- 
+
 export default CategoryProducts;
