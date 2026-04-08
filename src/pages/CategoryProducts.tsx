@@ -37,9 +37,9 @@ const CategoryProducts = () => {
 
                 {products?.map(product=>(
                     <div className="p-2 rounded-md hover:shadow-md hover:shadow-black flex flex-col items-center border transition-all duration-300 ease-in-out hover:-translate-y-1 hover:cursor-pointer justify-between" key={product.id} onClick={()=> navigate(`/products/${product.id}`)}>
-                        <img src={product.images[0]} alt={product.title} />
-                        <h3 className="">{product.title}</h3>
-                        <p className="">{product.price}</p>
+                        <img className="h-5/6 rounded-md" src={product.images[0]} alt={product.title} />
+                        <h3 className="text-lg font-mono text-cyan-600">{product.title}</h3>
+                        <p className="text-md font-mono text-cyan-500">{product.price}</p>
                     </div>
                 ))}
             </div>

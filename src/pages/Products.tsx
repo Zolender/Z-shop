@@ -34,24 +34,24 @@ const Products = () => {
     return (
         <div className="">
         
-        <button onClick={()=> navigate(-1)}>← Back</button>
+            <button onClick={()=> navigate(-1)}>← Back</button>
 
-        <h1 className="">{product.title}</h1>
-        <p className="">{product.price}</p>
-        <p className="">{product.description}</p>
+            <h1 className="">{product.title}</h1>
+            <p className="">{product.price}</p>
+            <p className="">{product.description}</p>
 
-        <div className="">
-            {product.images.map( (image, index)=>(
-                <img key={index} src={image} alt={product.title} className="" />
-            ))}
-        </div>
+            <div className="">
+                {product.images.map( (image, index)=>(
+                    <img key={index} src={image} alt={product.title} className="" />
+                ))}
+            </div>
 
-        <div className="">
-            <p className="">Category: {product.category.name}</p>
-        </div>
+            <div className="">
+                <p className="">Category: {product.category.name}</p>
+            </div>
         
         </div>
     );
 }
- 
+
 export default Products;
