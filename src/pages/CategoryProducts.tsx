@@ -27,7 +27,7 @@ const CategoryProducts = () => {
     const {data: products, isLoading, error} = useFetch<Product[]>(`https://api.escuelajs.co/api/v1/products/?categoryId=${id}`)
 
     if (isLoading)return <p className="flex items-center justify-center font-bold text-4xl font-mono animate-pulse h-screen">Loading products...</p>
-    if (error)return <p className="flex items-center justify-center font-bold text-4xl font-mono  h-screen">Error: {error.message}</p>
+    if (error)return <p className="flex items-center justify-center font-bold text-4xl font-mono h-screen">Error: {error.message}</p>
 
     if(!isLoading && !error)return (
         <div className="px-5">

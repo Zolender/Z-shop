@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { useTheme } from "../context/ThemeContext";
+import { Sun,  Moon } from "lucide-react";
 
 export default function NavBar(){
     const {currentUser, logout} = useAuth()
     const navigate = useNavigate()
+    const {theme, toggleTheme} = useTheme()
 
     const handleLogout = ()=>{
         logout()
@@ -14,7 +17,10 @@ export default function NavBar(){
         <nav className="flex fixed top-0 h-15 justify-between bg-linear-90 z-100 from-green-200 to-blue-200 px-10 w-full items-center">
             <span className="text-2xl font-mono">Hello, <span className="text-red-300">{currentUser?.name}</span></span>
 
-            <button className="bg-red-500 text-slate-100 px-5 py-1 rounded-md hover:bg-red-600 hover:cursor-pointer transition-colors ease-in-out duration-200" onClick={handleLogout}>Logout</button>
+            <div className="flex gap-5">
+                <button className="bg-red-500 text-slate-100 px-5 py-1 rounded-md hover:bg-red-600 hover:cursor-pointer transition-colors ease-in-out duration-200" onClick={handleLogout}>Logout</button>
+                <button className="hover:cursor-pointer" onClick={toggleTheme}>{theme==="light"?<Moon size={22}/> : <Sun size={22} /> }</button>
+            </div>        
         </nav>
     )
 }

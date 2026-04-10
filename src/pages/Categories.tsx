@@ -24,7 +24,7 @@ const Categories = () => {
             <h1 className="text-center text-4xl font-mono font-bold text-cyan-800 mb-10">Categories</h1>
             <div className="grid grid-cols-4 gap-5">
                 {categories?.map((category)=>(
-                    <div key={category.id} onClick={()=>navigate(`/categories/${category.id}`)} className=" p-2 flex flex-col overflow-hidden items-center rounded-md  bg-[#00eeff9a] transition-all duration-300 ease-in-out hover:scale-105 hover:cursor-pointer justify-between">
+                    <div key={category.id} onClick={()=>navigate(`/categories/${category.id}`)} className=" p-2 flex flex-col overflow-hidden items-center rounded-md  bg-gray-200 transition-all duration-300 ease-in-out hover:scale-105 hover:cursor-pointer justify-between">
                         <img className="h-5/6 rounded-md" src={category.image} alt={category.name} />
                         <h3 className="text-2xl font-mono text-slate-600 font-bold ">{category.name}</h3>
                     </div>
