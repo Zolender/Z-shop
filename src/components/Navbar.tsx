@@ -11,7 +11,7 @@ export default function NavBar(){
     }
 
     return(
-        <nav className="flex fixed top-0 h-10 justify-between px-10 border-b-2 border-slate-500 mb-10 w-full items-center">
+        <nav className="flex fixed top-0 h-15 justify-between px-10 border-b border-slate-500 mb-10 w-full items-center">
             <span className="text-2xl font-mono">Hello, <span className="text-red-300">{currentUser?.name}</span></span>
 
             <button className="bg-red-500 text-slate-100 px-5 py-1 rounded-md hover:bg-red-600 hover:cursor-pointer transition-colors ease-in-out duration-200" onClick={handleLogout}>Logout</button>
