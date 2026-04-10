@@ -17,7 +17,7 @@ export default function Login(){
 
     function validate(): boolean{
         if(!formData.email || !formData.password){
-            setError("All fields are required.")
+            setError("All fields are required.") 
             return false
         }
         return true
@@ -53,7 +53,7 @@ export default function Login(){
     }
 
     return (
-        <div className="flex flex-col w-full min-h-screen bg-[#17cded86] py-20 items-center ">
+        <div className="flex flex-col w-full min-h-screen bg-linear-130 from-blue-100 to-blue-200 py-20 items-center ">
             <h1 className="text-3xl font-bold font-mono text-gray-700 mb-10">Login</h1>
             <form onSubmit={handleSubmit} className="flex flex-col justify-between border-blue-300-2 w-90 h-90 rounded-md px-5 py-10 shadow-cyan-700 shadow-lg">
                 <div>
