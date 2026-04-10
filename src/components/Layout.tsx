@@ -4,7 +4,7 @@ import NavBar from "./Navbar";
 
 export default function Layout(){
     return (
-        <div className="flex flex-col w-full min-h-screen py-30  ">
+        <div className="flex flex-col w-full min-h-screen py-30 relative ">
             <NavBar/>
             <main>
                 <Outlet/>

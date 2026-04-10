@@ -32,17 +32,17 @@ const Products = () => {
     if(!product)return <p className="">Product not found</p>
     
     return (
-        <div className="">
+        <div className="flex flex-col items-center">
         
-            <button onClick={()=> navigate(-1)}>← Back</button>
+            <button className="absolute top-15 rounded-full left-5  hover:cursor-pointer hover:scale-110  transition-all duration-300 ease-in font-bold text-2xl  text-slate-700" onClick={()=> navigate(-1)}>← Back</button>
 
             <h1 className="">{product.title}</h1>
             <p className="">{product.price}</p>
             <p className="">{product.description}</p>
 
-            <div className="">
+            <div className=" grid grid-cols-3 gap-5">
                 {product.images.map( (image, index)=>(
-                    <img key={index} src={image} alt={product.title} className="" />
+                    <img key={index} src={image} alt={product.title} className="rounded-md" />
                 ))}
             </div>
 

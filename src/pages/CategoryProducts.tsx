@@ -29,10 +29,10 @@ const CategoryProducts = () => {
     if (isLoading)return <p className="flex items-center justify-center font-bold text-4xl font-mono animate-pulse h-screen">Loading products...</p>
     if (error)return <p className="flex items-center justify-center font-bold text-4xl font-mono  h-screen">Error: {error.message}</p>
 
-    return (
+    if(!isLoading && !error)return (
         <div className="px-5">
-            <button className="px-5 py-2 bg-blue-400 hover:cursor-pointer hover:bg-blue-500 transition-colors duration-300 ease-in font-bold text-lg rounded-md text-slate-200" onClick={()=> navigate(-1)}>← Back</button>
-            <h1 className="text-center text-4xl font-mono font-bold text-cyan-800 mb-10">{products?.[0]?.category.name?? "Category"}</h1>
+            <button className=" absolute top-15 rounded-full left-5  hover:cursor-pointer hover:scale-110  transition-all duration-300 ease-in font-bold text-2xl  text-slate-700" onClick={()=> navigate(-1)}>← Back</button>
+            <h1 className="text-center text-4xl font-mono font-bold text-cyan-800 mb-10">{products?.[0]?.category.name}</h1>
             <div className="grid grid-cols-4 gap-5">
                 {products?.length === 0 && (<p className="text-center text-6xl font-mono font-bold text-red-800">No products found in this category.</p>)}
 
