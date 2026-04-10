@@ -14,7 +14,7 @@ export default function NavBar(){
     }
 
     return(
-        <nav className={`flex fixed top-0 h-15 justify-between bg-linear-90 z-100 transition-colors duration-500 ease-in-out ${theme==="light"? "from-green-200 to-blue-200" : "from-slate-700 to-slate-500"} px-10 w-full items-center`}>
+        <nav className={`flex fixed top-0 h-15 justify-between bg-linear-90 z-100 transition-colors duration-300 ease-in-out ${theme==="light"? "from-green-200 to-blue-200" : "from-slate-700 to-slate-500"} px-10 w-full items-center`}>
             <span className={`text-2xl font-mono ${theme==="light"? "text-slate-700": "text-slate-200"}`}>Hello, <span className={`${theme==="light"? "text-red-900": "text-yellow-400"}`}>{currentUser?.name}</span></span>
 
             <div className={`flex gap-5`}>
