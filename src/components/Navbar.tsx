@@ -14,12 +14,12 @@ export default function NavBar(){
     }
 
     return(
-        <nav className="flex fixed top-0 h-15 justify-between bg-linear-90 z-100 from-green-200 to-blue-200 px-10 w-full items-center">
-            <span className="text-2xl font-mono">Hello, <span className="text-red-300">{currentUser?.name}</span></span>
+        <nav className={`flex fixed top-0 h-15 justify-between bg-linear-90 z-100 transition-colors duration-500 ease-in-out ${theme==="light"? "from-green-200 to-blue-200" : "from-slate-700 to-slate-500"} px-10 w-full items-center`}>
+            <span className={`text-2xl font-mono ${theme==="light"? "text-slate-700": "text-slate-200"}`}>Hello, <span className={`${theme==="light"? "text-red-900": "text-yellow-400"}`}>{currentUser?.name}</span></span>
 
-            <div className="flex gap-5">
-                <button className="bg-red-500 text-slate-100 px-5 py-1 rounded-md hover:bg-red-600 hover:cursor-pointer transition-colors ease-in-out duration-200" onClick={handleLogout}>Logout</button>
-                <button className="hover:cursor-pointer" onClick={toggleTheme}>{theme==="light"?<Moon size={22}/> : <Sun size={22} /> }</button>
+            <div className={`flex gap-5`}>
+                <button className={`bg-red-500 text-slate-100 px-5 py-1 rounded-md hover:bg-red-600 hover:cursor-pointer transition-colors ease-in-out duration-200`} onClick={handleLogout}>Logout</button>
+                <button className={`hover:cursor-pointer`} onClick={toggleTheme}>{theme==="light"?<Moon size={22}/> : <Sun size={22} /> }</button>
             </div>        
         </nav>
     )
