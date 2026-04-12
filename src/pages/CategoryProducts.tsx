@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
+import { useTheme } from "../context/ThemeContext"
 
 type Product = {
     id: number
@@ -23,6 +24,7 @@ type Product = {
 const CategoryProducts = () => {
     const {id} = useParams()
     const navigate = useNavigate();
+    const {theme} = useTheme()
 
     const {data: products, isLoading, error} = useFetch<Product[]>(`https://api.escuelajs.co/api/v1/products/?categoryId=${id}`)
 

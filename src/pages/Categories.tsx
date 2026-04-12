@@ -16,7 +16,7 @@ const Categories = () => {
     const navigate = useNavigate()
 
     const {data: categories, isLoading, error} = useFetch<Category[]>("https://api.escuelajs.co/api/v1/categories")
-    const {theme, toggleTheme} = useTheme()
+    const {theme} = useTheme()
 
     if(isLoading)return <p className="flex items-center justify-center font-bold text-4xl font-mono animate-pulse h-screen">Loading categories...</p>
     if(error)return <p className="flex items-center justify-center font-bold text-2xl font-mono h-screen text-red-400">Error: {error.message}</p>
