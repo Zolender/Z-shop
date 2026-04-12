@@ -38,12 +38,12 @@ const Products = () => {
         
             <button className={`absolute top-15 rounded-full left-5  hover:cursor-pointer hover:scale-110  transition-all duration-300 ease-in font-bold text-2xl  ${theme==="light"? "text-slate-700": "text-slate-200"}`} onClick={()=> navigate(-1)}>← Back</button>
 
-            <div className="bg-slate-300 flex flex-col justify-between py-10 px-5 w-[80%] mx-auto rounded-md ">
-                <h1 className="font-semibold capitalize"><span className="font-bold text-2xl text-slate-600">Title:</span>{product.title}</h1>
-                <p className="font-semibold capitalize"><span className="font-bold text-2xl text-slate-600">Price:</span>{product.price}</p>
-                <p className="font-semibold capitalize"><span className="font-bold text-2xl text-slate-600">Description:</span>{product.description}</p>
-                <p className="font-semibold capitalize"><span className="font-bold text-2xl text-slate-600">Category:</span> {product.category.name}</p>
-                <p className="font-bold text-2xl text-slate-600 self-center">Images</p>
+            <div className={`${theme==="light"? "bg-slate-300" : "bg-slate-700"} font-semibold capitalize flex flex-col justify-between py-10 px-5 w-[80%] mx-auto rounded-md text-lg gap-5 `}>
+                <h1 ><span className={`font-bold text-2xl ${theme==="light"? "text-slate-600" : "text-slate-100"}`}>Title:</span>{product.title}</h1>
+                <p ><span className={`font-bold text-2xl ${theme==="light"? "text-slate-600" : "text-slate-100"}`}>Price:</span>{product.price}</p>
+                <p ><span className={`font-bold text-2xl ${theme==="light"? "text-slate-600" : "text-slate-100"}`}>Description:</span>{product.description}</p>
+                <p ><span className={`font-bold text-2xl ${theme==="light"? "text-slate-600" : "text-slate-100"}`}>Category:</span> {product.category.name}</p>
+                <p className="font-bold text-2xl self-center">Images</p>
                 <div className=" flex flex-wrap gap-5 my-5 mx-auto w-10/11 ">
                     {product.images.map( (image, index)=>(
                         <img key={index} src={image} alt={product.title} className="rounded-md hover:scale-105 transition-all duration-300 ease-in-out w-100" />
