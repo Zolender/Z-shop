@@ -32,11 +32,11 @@ const CategoryProducts = () => {
     if (error)return <p className="flex items-center justify-center font-bold text-4xl font-mono h-screen">Error: {error.message}</p>
 
     if(!isLoading && !error)return (
-        <div className="px-5">
-            <button className=" absolute top-15 rounded-full left-5  hover:cursor-pointer hover:scale-110  transition-all duration-300 ease-in font-bold text-2xl  text-slate-700" onClick={()=> navigate(-1)}>← Back</button>
-            <h1 className="text-center text-4xl font-mono font-bold text-cyan-800 mb-10">{products?.[0]?.category.name}</h1>
+        <div className="px-5 w-full">
+            <button className={`absolute top-15 rounded-full left-5  hover:cursor-pointer hover:scale-110  transition-all duration-300 ease-in font-bold text-2xl  ${theme==="light"? "text-slate-700": "text-slate-200"}`} onClick={()=> navigate(-1)}>← Back</button>
+            <h1 className={`text-center text-4xl font-mono font-bold ${theme==="light"? "text-slate-700": "text-slate-200"} mb-10`}>{products?.[0]?.category.name}</h1>
             <div className="grid grid-cols-4 gap-5">
-                {products?.length === 0 && (<p className="text-center text-6xl font-mono font-bold text-red-800">No products found in this category.</p>)}
+                {products?.length === 0 && (<p className="text-center w-full text-6xl font-mono font-bold text-red-800">No products found in this category.</p>)}
 
                 {products?.map(product=>(
                     <div className=" p-2 flex flex-col overflow-hidden items-center rounded-md  bg-[#00eeff9a] transition-all duration-300 ease-in-out hover:scale-105 hover:cursor-pointer justify-between" key={product.id} onClick={()=> navigate(`/products/${product.id}`)}>

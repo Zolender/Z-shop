@@ -4,7 +4,7 @@ import { useTheme } from "../context/ThemeContext";
 
 
 export default function Layout(){
-    const {theme, toggleTheme} = useTheme()
+    const {theme} = useTheme()
     return (
         <div className={`flex flex-col w-full min-h-screen py-30 relative transition-colors duration-300 ease-in-out ${theme==="light"? "bg-slate-100": "bg-slate-600"} `}>
             <NavBar/>
