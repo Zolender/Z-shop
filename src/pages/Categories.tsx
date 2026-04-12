@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
-import { useTheme } from "../context/ThemeContext"
+import { useTheme } from "../hooks/useTheme"
 
 type Category = {
     id: number
